@@ -52,7 +52,7 @@ const configured = pickConfiguredApi();
 const developmentFallbackUrl =
   process.env.NODE_ENV === "development"
     ? "https://jomaasapi.onrender.com"
-    : "";
+    : "https://jomaasapi.onrender.com";
 
 const apiUrl = configured.value || developmentFallbackUrl;
 

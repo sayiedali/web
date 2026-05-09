@@ -5,7 +5,7 @@ const URL =
   apiConfig.apiUrl ||
   (process.env.NODE_ENV === "development"
     ? "https://jomaasapi.onrender.com"
-    : "");
+    : "https://jomaasapi.onrender.com");
 
 export const socket = io(URL, {
   reconnection: true,
