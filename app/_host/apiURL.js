@@ -1,6 +1,9 @@
 const normalizeUrl = (value) => {
   if (!value || typeof value !== "string") return "";
-  return value.trim().replace(/^['"]|['"]$/g, "").replace(/\/+$/, "");
+  return value
+    .trim()
+    .replace(/^['"]|['"]$/g, "")
+    .replace(/\/+$/, "");
 };
 
 const withHttpProtocol = (value) => {
@@ -48,14 +51,15 @@ const pickConfiguredApi = () => {
 const configured = pickConfiguredApi();
 const developmentFallbackUrl =
   process.env.NODE_ENV === "development"
-    ? "https://jomaaspizzaapi.onrender.com"
+    ? "https://jomaasapi.onrender.com"
     : "";
 
 const apiUrl = configured.value || developmentFallbackUrl;
 
 export const apiConfig = {
   apiUrl,
-  sourceKey: configured.key || (developmentFallbackUrl ? "development-fallback" : ""),
+  sourceKey:
+    configured.key || (developmentFallbackUrl ? "development-fallback" : ""),
   sourceValue: configured.value || developmentFallbackUrl || "",
   isConfigured: !!(configured.value || developmentFallbackUrl),
   hasExplicitConfig: !!configured.value,

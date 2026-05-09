@@ -4,7 +4,7 @@ import { apiConfig } from "@/app/_host/apiURL";
 const URL =
   apiConfig.apiUrl ||
   (process.env.NODE_ENV === "development"
-    ? "https://jomaaspizzaapi.onrender.com"
+    ? "https://jomaasapi.onrender.com"
     : "");
 
 export const socket = io(URL, {
